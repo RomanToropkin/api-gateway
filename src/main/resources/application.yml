@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: program-flask-route
+          uri: http://localhost:9901
+          predicates:
+            - Path=/spec/**
+          filters:
+            - AddRequestHeader=X-AUTH-SECRET, t7w!z%C*F-JaNdRgUkXp2r5u8x/A?D(G+KbPeShVmYq3t6v9y$B&E)H@McQfTjWn
+
+server:
+  port: 9999
